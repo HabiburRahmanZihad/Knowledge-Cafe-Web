@@ -23,7 +23,7 @@ const Blogs = () => {
         setBookmarked(newBookmark);
     }
 
-    const handletime = (time, id) => { 
+    const handletime = (time, id) => {
         const newTime = readingTime + time;
         setReadingTime(newTime);
         handleRemoveBookedMarked(id);
@@ -57,16 +57,26 @@ const Blogs = () => {
 
 
                 {/* Right side */}
-                <div className='flex-1 border'>
-                    <h1>Reading Time : {readingTime} minutes</h1>
-                    <h1>Bookmarked Count : {bookmarked.length}</h1>
+                <div className='flex-1'>
+                    <div className='text-[1.6rem] font-bold  py-4 text-center text-[#6047EC] bg-[#6047ec2c] rounded-xl'>
 
-                    {
-                        bookmarked.map((marked, index) =>
-                            <p key={index}
-                                className='text-2xl font-semibold mt-1 border'>
-                                {marked.title}</p>)
-                    }
+                        <h1  >Spent time on read : {readingTime} min</h1>
+                    </div>
+
+
+                    <div className='p-5 mt-10 bg-[rgba(17,17,17,0.05)] rounded-xl'>
+                        <h1 className='text-[1.6rem] font-bold mb-4 ' >Bookmarked Count : {bookmarked.length}</h1>
+                        {
+                            bookmarked.map((marked, index) =>
+                                <div key={index}
+                                    className='space-y-2 mb-4  p-4 bg-white rounded-xl shadow-lg'
+                                > <p
+                                    className='text-2xl font-semibold'>
+                                        {marked.title}</p>
+                                </div>)
+                        }
+                    </div>
+
                 </div>
             </div>
         </div>

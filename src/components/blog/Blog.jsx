@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FaBookmark } from "react-icons/fa";
 
-const Blog = ({ blog, handleBookmark , handletime}) => {
+const Blog = ({ blog, handleBookmark, handletime }) => {
 
     return (
         <div>
